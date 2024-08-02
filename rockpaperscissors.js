@@ -1,3 +1,7 @@
+// used to calculate scores
+// var humanScore = 0;
+// var computerScore = 0;
+
 function getComputerChoice(){
     let rand = parseFloat(Math.random());
     if ((rand >= 0) && (rand < 1/3)){
@@ -12,16 +16,19 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChoice = prompt("Enter r for rock, p for paper, or s for scissors");
-    if (humanChoice == "r"){
+    let humanChoice = prompt("Enter rock, paper or scissors!").toLowerCase;
+    if (humanChoice == "rock"){
         return "rock";
     }
-    else if (humanChoice == "p"){
+    else if (humanChoice == "paper"){
         return "paper";
     }
-    else if (humanChoice == "s"){
+    else if (humanChoice == "scissors"){
         return "scissors";
     }
+
 }
-console.log(getHumanChoice());
-console.log(getComputerChoice());
+
+function playRound(humanChoice, computerChoice){
+
+}
