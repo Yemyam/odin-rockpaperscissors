@@ -16,7 +16,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChoice = prompt("Enter rock, paper or scissors!").toLowerCase;
+    let humanChoice = prompt("Please enter rock, paper or scissors!").toLowerCase();
     if (humanChoice == "rock"){
         return "rock";
     }
@@ -26,9 +26,12 @@ function getHumanChoice(){
     else if (humanChoice == "scissors"){
         return "scissors";
     }
+    else{
+        return getHumanChoice();
+    }
 
 }
-
+console.log(getHumanChoice());
 function playRound(humanChoice, computerChoice){
 
 }
