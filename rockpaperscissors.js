@@ -35,14 +35,14 @@ function getHumanChoice(){
 }
 function playRound(humanChoice, computerChoice){
     if (humanChoice == computerChoice){
-        console.log(`Its a tie! You both chose ${humanChoice}`)
+        document.querySelector("#results").textContent = `Its a tie! You both chose ${humanChoice}`
     }
     else if ((((humanChoice == "paper") && (computerChoice == "scissors")) || ((humanChoice == "rock") && (computerChoice == "paper"))) || ((humanChoice == "scissors") && (computerChoice == "rock"))){
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        document.querySelector("#results").textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     }
     else{
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        document.querySelector("#results").textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
     }
 }
