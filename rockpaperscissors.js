@@ -47,19 +47,24 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-function playGame(){
-    for(let i = 0; i<5; i++){
-        playRound(getHumanChoice(),getComputerChoice());
-        console.log(`Score: You: ${humanScore} Computer: ${computerScore}`);
-    }
-    if (humanScore > computerScore){
-        console.log("You won the game!")
-    }
-    else if (humanScore < computerScore){
-        console.log("You lost the game")
-    }
-    else{
-        console.log("The game was a tie!")
-    }
-}
-playGame();
+const rockBtn = document.querySelector("#rockBtn");
+rockBtn.addEventListener("click",function(){
+    playRound("rock",getComputerChoice())
+})
+
+// function playGame(){
+//     for(let i = 0; i<5; i++){
+//         playRound(getHumanChoice(),getComputerChoice());
+//         console.log(`Score: You: ${humanScore} Computer: ${computerScore}`);
+//     }
+//     if (humanScore > computerScore){
+//         console.log("You won the game!")
+//     }
+//     else if (humanScore < computerScore){
+//         console.log("You lost the game")
+//     }
+//     else{
+//         console.log("The game was a tie!")
+//     }
+// }
+// playGame();
