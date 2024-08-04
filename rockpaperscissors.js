@@ -35,21 +35,30 @@ function getHumanChoice(){
 }
 function playRound(humanChoice, computerChoice){
     if (humanChoice == computerChoice){
-        document.querySelector("#results").textContent = `Its a tie! You both chose ${humanChoice}`
+        results.textContent = `Its a tie! You both chose ${humanChoice}`
     }
     else if ((((humanChoice == "paper") && (computerChoice == "scissors")) || ((humanChoice == "rock") && (computerChoice == "paper"))) || ((humanChoice == "scissors") && (computerChoice == "rock"))){
-        document.querySelector("#results").textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+        results.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     }
     else{
-        document.querySelector("#results").textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+        results.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
+    }
+    score.textContent = `Player: ${humanScore} Computer: ${computerScore}`
+    if(humanScore == 5){
+        alert("You reached 5 points, you win!")
+    }
+    else if(computerScore == 5){
+        alert("The computer reached 5 points, you lose!")
     }
 }
 
 const rockBtn = document.querySelector("#rockBtn");
 const paperBtn = document.querySelector("#paperBtn");
 const scissorsBtn = document.querySelector("#scissorsBtn");
+const score = document.querySelector("#score")
+const results = document.querySelector("#results")
 rockBtn.addEventListener("click",function(){
     playRound("rock",getComputerChoice())
 })
@@ -59,6 +68,7 @@ paperBtn.addEventListener("click", function(){
 scissorsBtn.addEventListener("click",function(){
     playRound("scissors",getComputerChoice())
 })
+
 
 // function playGame(){
 //     for(let i = 0; i<5; i++){
