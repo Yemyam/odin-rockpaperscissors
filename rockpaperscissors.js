@@ -46,11 +46,15 @@ function playRound(humanChoice, computerChoice){
         humanScore++;
     }
     score.textContent = `Player: ${humanScore} Computer: ${computerScore}`
-    if(humanScore == 5){
-        alert("You reached 5 points, you win!")
-    }
-    else if(computerScore == 5){
-        alert("The computer reached 5 points, you lose!")
+    if((humanScore == 5) || (computerScore == 5)){
+        if (humanScore == 5){
+            winner.textContent = "You reached 5 points, you win!"
+        }
+        else{
+            winner.textContent = "The computer reached 5 points, you lose!"
+        }
+        // now display play again buttons
+        
     }
 }
 
@@ -59,6 +63,7 @@ const paperBtn = document.querySelector("#paperBtn");
 const scissorsBtn = document.querySelector("#scissorsBtn");
 const score = document.querySelector("#score")
 const results = document.querySelector("#results")
+const winner = document.querySelector("#winner")
 rockBtn.addEventListener("click",function(){
     playRound("rock",getComputerChoice())
 })
