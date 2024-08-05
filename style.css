@@ -1,0 +1,9 @@
+.choices {
+    display: flex;
+    justify-content:center;
+    gap: 50px;
+}
+
+#results,#score,#winner,#playAgain {
+    text-align: center;
+}
